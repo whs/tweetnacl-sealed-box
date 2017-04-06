@@ -40,7 +40,7 @@ This library should be interoperable with libsodium's implementation of sealed b
 
 I'm not a security expert, so use this at your own risk.
 
-This library does not zero out memory except for the ephemeral secret key. However, the JavaScript run time in use may not guaranteed that the memory is securely wiped. Set `sealedBox.zero = false` to disable this entirely.
+This library does not zero out memory except for the ephemeral secret key. However, the JavaScript run time in use may not guaranteed that the memory is securely wiped.
 
 ## License
 
