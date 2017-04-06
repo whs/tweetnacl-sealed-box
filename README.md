@@ -14,7 +14,15 @@ From libsodium's documentation:
 
 ## Usage
 
-TODO: Upload this to npm
+This module can be installed from npm:
+
+```sh
+npm install tweetnacl-sealedbox-js
+```
+
+For use in web browsers, use [sealedbox.web.js](sealedbox.web.js).
+
+Then you can use it as follow:
 
 ```js
 var tweetnacl = require('tweetnacl');
@@ -25,6 +33,7 @@ var keyPair = tweetnacl.box.keyPair();
 
 // encrypt the message
 var sealed = tweetnacl.sealedbox.seal(buffer, keyPair.publicKey);
+// sealed will have the size of buffer.length + tweetnacl.sealedbox.overheadLength
 
 // decrypt the message
 var result = tweetnacl.sealedbox.open(sealed, keyPair.publicKey, keyPair.secretKey);
