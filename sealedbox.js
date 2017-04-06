@@ -1,5 +1,5 @@
 var nacl = require('tweetnacl');
-var blake = require('blakejs');
+var blake = require('blakejs/blake2b');
 
 var sealedBox = {
 	zero: true,
