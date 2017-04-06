@@ -1,0 +1,19 @@
+{
+  "name": "tweetnacl-sealedbox-js",
+  "version": "0.1.0",
+  "description": "",
+  "main": "sealedbox.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "sodium": "^2.0.1"
+  },
+  "dependencies": {
+    "blakejs": "^1.0.1",
+    "tweetnacl": "^1.0.0-rc.1"
+  }
+}
