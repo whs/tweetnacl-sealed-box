@@ -7,7 +7,7 @@
 		var a = typeof exports === 'object' ? factory(require("tweetnacl"), require("blakejs/blake2b")) : factory(root["tweetnacl"], root["blakejs/blake2b"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_7__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_5__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -16,9 +16,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -42,9 +42,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
 /******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
@@ -73,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -101,11 +98,11 @@ const overheadLength = __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box.pub
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = nonce;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tweetnacl__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_tweetnacl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_blakejs_blake2b__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_blakejs_blake2b__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_blakejs_blake2b___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_blakejs_blake2b__);
-/* harmony export (immutable) */ __webpack_exports__["a"] = nonce;
 
 
 
@@ -122,20 +119,19 @@ function nonce(pk1, pk2){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tweetnacl__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_tweetnacl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nonce__ = __webpack_require__(2);
-/* harmony export (immutable) */ __webpack_exports__["a"] = open;
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_consts__ = __webpack_require__(1);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "overheadLength", function() { return __WEBPACK_IMPORTED_MODULE_0__src_consts__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_seal__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_open__ = __webpack_require__(7);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "seal", function() { return __WEBPACK_IMPORTED_MODULE_1__src_seal__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "open", function() { return __WEBPACK_IMPORTED_MODULE_2__src_open__["a"]; });
 
 
 
-function open(c, pk, sk){
-	var epk = c.subarray(0, __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box.publicKeyLength);
-	var nonce = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__nonce__["a" /* default */])(epk, pk);
 
-	var boxData = c.subarray(__WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box.publicKeyLength);
-	return __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box.open(boxData, nonce, epk, sk);
-};
+
+
 
 
 /***/ }),
@@ -143,12 +139,12 @@ function open(c, pk, sk){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = seal;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tweetnacl__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_tweetnacl__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nonce__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__consts__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(6);
-/* harmony export (immutable) */ __webpack_exports__["a"] = seal;
 
 
 
@@ -160,11 +156,11 @@ function seal(m, pk){
 	var ek = __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box.keyPair();
 	c.set(ek.publicKey);
 
-	var nonce = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__nonce__["a" /* default */])(ek.publicKey, pk);
+	var nonce = Object(__WEBPACK_IMPORTED_MODULE_1__nonce__["a" /* default */])(ek.publicKey, pk);
 	var boxed = __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box(m, nonce, pk, ek.secretKey);
 	c.set(boxed, ek.publicKey.length);
 
-	__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["a" /* zero */])(ek.secretKey);
+	Object(__WEBPACK_IMPORTED_MODULE_3__utils__["a" /* zero */])(ek.secretKey);
 
 	return c;
 };
@@ -172,23 +168,9 @@ function seal(m, pk){
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_consts__ = __webpack_require__(1);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "overheadLength", function() { return __WEBPACK_IMPORTED_MODULE_0__src_consts__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_seal__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_open__ = __webpack_require__(3);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "seal", function() { return __WEBPACK_IMPORTED_MODULE_1__src_seal__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "open", function() { return __WEBPACK_IMPORTED_MODULE_2__src_open__["a"]; });
-
-
-
-
-
-
-
+module.exports = require("blakejs/blake2b");
 
 /***/ }),
 /* 6 */
@@ -205,9 +187,24 @@ function zero(buf){
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = require("blakejs/blake2b");
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = open;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tweetnacl__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_tweetnacl__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nonce__ = __webpack_require__(2);
+
+
+
+function open(c, pk, sk){
+	var epk = c.subarray(0, __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box.publicKeyLength);
+	var nonce = Object(__WEBPACK_IMPORTED_MODULE_1__nonce__["a" /* default */])(epk, pk);
+
+	var boxData = c.subarray(__WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box.publicKeyLength);
+	return __WEBPACK_IMPORTED_MODULE_0_tweetnacl___default.a.box.open(boxData, nonce, epk, sk);
+};
+
 
 /***/ })
 /******/ ]);
