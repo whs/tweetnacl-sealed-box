@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("tweetnacl"), require("blakejs/blake2b"));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define(["tweetnacl", "blakejs/blake2b"], factory);
+		define([], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("tweetnacl"), require("blakejs/blake2b")) : factory(root["tweetnacl"], root["blakejs/blake2b"]);
+		var a = factory();
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_5__) {
+})(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

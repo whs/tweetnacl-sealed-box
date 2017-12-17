@@ -8,7 +8,7 @@ var textBuffer = Buffer.from(plainText);
 
 describe('SealedBox', function(){
 	describe('#seal', function(){
-		it.skip('can be opened with crypto_box_seal_open', function(){
+		it('can be opened with crypto_box_seal_open', function(){
 			var keyPair = tweetnacl.box.keyPair();
 			var sealed = sealedbox.seal(textBuffer, keyPair.publicKey);
 
@@ -18,7 +18,7 @@ describe('SealedBox', function(){
 	});
 
 	describe('#open', function(){
-		it.skip('can open crypto_box_seal data', function(){
+		it('can open crypto_box_seal data', function(){
 			var keyPair = sodium.crypto_box_keypair();
 			var sealed = sodium.crypto_box_seal(textBuffer, keyPair.publicKey);
 
