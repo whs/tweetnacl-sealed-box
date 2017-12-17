@@ -12,9 +12,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^3.5.3",
-    "sodium": "^2.0.1",
-    "webpack": "^3.6.0",
+    "mocha": "^4.0.1",
+    "sodium": "^2.0.3",
+    "webpack": "^3.10.0",
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
