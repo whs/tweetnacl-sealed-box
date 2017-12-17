@@ -1,8 +1,10 @@
 {
   "name": "tweetnacl-sealedbox-js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "sealedbox.node.js",
+  "module": "entrypoint.js",
+  "modules.root": "src",
   "scripts": {
     "test": "webpack --config webpack.node.config.js && mocha",
     "prepublishOnly": "webpack --config webpack.node.config.js && webpack -p --config webpack.web.config.js"
