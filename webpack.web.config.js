@@ -18,4 +18,5 @@ module.exports = {
 	node: {
 		Buffer: false,
 	},
+	mode: 'production',
 };

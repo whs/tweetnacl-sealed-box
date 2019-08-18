@@ -1,6 +1,6 @@
 {
   "name": "tweetnacl-sealedbox-js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "sealedbox.node.js",
   "module": "entrypoint.js",
@@ -12,13 +12,14 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^4.0.1",
-    "sodium": "^2.0.3",
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0"
+    "libsodium-wrappers": "^0.7.5",
+    "mocha": "^6.2.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "blakejs": "^1.1.0",
-    "tweetnacl": "^1.0.0"
+    "tweetnacl": "^1.0.1"
   }
 }

@@ -1,5 +1,5 @@
 var assert = require('assert');
-var sodium = require('sodium').api;
+var sodium = require('libsodium-wrappers');
 var tweetnacl = require('tweetnacl');
 var sealedbox = require('../');
 
@@ -22,7 +22,7 @@ describe('SealedBox', function(){
 			var keyPair = sodium.crypto_box_keypair();
 			var sealed = sodium.crypto_box_seal(textBuffer, keyPair.publicKey);
 
-			var result = sealedbox.open(new Uint8Array(sealed), keyPair.publicKey, keyPair.secretKey);
+			var result = sealedbox.open(new Uint8Array(sealed), keyPair.publicKey, keyPair.privateKey);
 			assert(textBuffer.equals(Buffer.from(result)), result.toString());
 		});
 		it('can open own sealed data', function(){

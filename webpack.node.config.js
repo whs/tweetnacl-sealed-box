@@ -8,5 +8,6 @@ module.exports = {
 		libraryTarget: 'umd',
 	},
 	target: 'node',
+	mode: 'production',
 	externals: [nodeExternals()],
 };
