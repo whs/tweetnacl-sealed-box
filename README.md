@@ -54,3 +54,6 @@ This library does not zero out memory except for the ephemeral secret key. Howev
 ## License
 
 This library is licensed under the [MIT license](LICENSE.txt).
+
+This project is [unmaintained](http://unmaintained.tech/). You may use it, but issues and pull requests might be ignored.
+
