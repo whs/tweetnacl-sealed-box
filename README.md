@@ -1,6 +1,6 @@
 # libsodium Sealed Box for TweetNaCl.js
 
-This library implements [sealed box](https://download.libsodium.org/doc/public-key_cryptography/sealed_boxes.html) for TweetNaCl.
+This library implements [sealed box](https://doc.libsodium.org/public-key_cryptography/sealed_boxes) for TweetNaCl.
 
 From libsodium's documentation:
 
